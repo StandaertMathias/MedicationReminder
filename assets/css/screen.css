@@ -1,0 +1,45 @@
+body{
+    min-height: 100vh;
+}
+header h1{
+    text-align: center;
+}
+main{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.calendar{
+    border: 2px dashed black;
+    padding: 20px;
+}
+
+.firstAction{
+    font-size: 2rem;
+    display: block;
+    background-color: gray;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+
+}
+.firstAction:hover{
+    transform: scale(1.1);
+}
+.firstAction:visited,.firstAction:hover{
+    color: white;
+    text-decoration: none;
+}
+li, li>label{
+    font-size: 1.8rem;
+}
+.calendar li, .calendar li>span{
+    list-style-type: none;
+}

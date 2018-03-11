@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/screen_account.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <title>Medication Reminder</title>
+</head>
+<body>
+<header>
+    <h1>Medication Reminder</h1>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <h2>Account</h2>
+    <p>John Doe</p><a href="">log out</a>
+
+    <h2>Log in</h2>
+    <form action="get">
+        <label for="username">Username:</label><input type="text" id="username" name="username">
+        <label for="password">Password:</label><input type="password" id="password" name="password"></form>
+    <h2>New account</h2>
+    <form action="">
+        <label for="">email-address:</label><input type="text">
+        <label for="">password:</label><input type="text">
+        <label for="">repeat password:</label><input type="text">
+        <label for="">birthday</label><input type="date"></form>
+    <input type="submit" value="make account">
+</main>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
