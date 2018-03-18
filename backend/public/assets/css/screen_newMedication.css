@@ -1,0 +1,40 @@
+input[type=checkbox]{
+    display: none
+}
+input[type=checkbox]+label{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+}
+input[type=checkbox]:checked+label{
+    background-color: gray;
+}
+.inactive{
+    display: none;
+}
+label{
+    margin-right: 20px;
+}
+fieldset>a{
+    margin-right: 50px;
+    margin-top: 50px;
+    text-align: start;
+}
+hr+a+a{
+    text-align: end;
+}
+label{
+    display: block;
+}
+label+input+label{
+    display: inline;
+}
+input[type=time]{
+    display: block;
+    margin-bottom: 20px;
+}

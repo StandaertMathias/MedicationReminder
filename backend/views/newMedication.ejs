@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/screen_newMedication.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <title>Medication Reminder</title>
+</head>
+<body>
+<header>
+    <h1>Medication Reminder</h1>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="account.html">Account</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <h2>Add new medication</h2>
+    <form action="addMedication" method="post">
+        <fieldset id="firstscreen">
+            <legend>Stap 1</legend>
+            <label for="name">Name:     </label>
+            <select name="name" id="name">
+                <%for (var i=0 ; i<drugs.length ; i++ ) {%>
+                        <option id="<%= drugs[i].drug_id %>"><%= drugs[i].name %></option>
+                <%}%>
+            </select>
+            <hr>
+            <a href="#" class="step2">next step</a>
+        </fieldset>
+        <fieldset  class="inactive" id="secondscreen">
+            <legend>Stap 2</legend>
+            <label for="dose">doses:    </label><input type="number" min="0" id="dose" name="dose">
+            <select name="unit">
+                <option value="capsule">Capsule</option>
+                <option value="gram">Gram</option>
+                <option value="milligram" selected>Milligram</option>
+                <option value="milliliter">Milliliter</option>
+                <option value="pill">Pill</option>
+                <option value="capsule">Capsule</option>
+            </select>
+            <hr>
+            <a href="#" id="previous" class="step1">previous step</a>
+            <a href="#" class="step3">next step</a>
+        </fieldset>
+        <fieldset class="inactive" id="thirdscreen">
+            <legend>Step 3</legend>
+            <h3>Days</h3>
+            <input type="checkbox" id="Mo"><label for="Mo">Mo</label>
+            <input type="checkbox" id="Tu"><label for="Tu">Tu</label>
+            <input type="checkbox" id="We"><label for="We">We</label>
+            <input type="checkbox" id="Th"><label for="Th">Th</label>
+            <input type="checkbox" id="Fr"><label for="Fr">Fr</label>
+            <input type="checkbox" id="Sa"><label for="Sa">Sa</label>
+            <input type="checkbox" id="Su"><label for="Su">Su</label>
+            <h3>Times</h3>
+            <label>Minimal time between:    </label><input type="number" min="0" max="24" value="4">
+            <label for="">hours</label>
+            <div id="times">
+                <h3>Notifications</h3>
+                <input type="time">
+            </div>
+            <a href="#" id="addTime">new time</a>
+            <hr>
+            <a href="#" class="step2">previous step</a>
+            <input type="submit" value="add">
+        </fieldset>
+    </form>
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="assets/js/newmedication.js"></script>
+</body>
+</html>
