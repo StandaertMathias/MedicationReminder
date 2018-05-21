@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/screen.css">
     <link rel="stylesheet" href="assets/css/screen_details.css">
     <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/screen_calendar.css">
     <link href='assets/css/fullcalendar.min.css' rel='stylesheet' />
     <link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
     <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -33,24 +34,31 @@
         window.open(code);
     };
     $(document).ready(function() {
-        var date = new Date();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-        var day = date.getDate();
-        $('#calendar').fullCalendar({
-            defaultDate: year + '-' + month +'-'+day,
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                <%for (var i=0 ; i<taken.length ; i++ ) {%>
-                    {
-                    title: "<%=taken[i].title%>",
-                    start: new Date("<%=taken[i].start%>")
-                    },
-                <%}%>
-            ]
-        });
-        $('#sendMail').on('submit',sendMail)
+        if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1){
+            $("#sendMail").hide();
+            $('#calendar').html('<h2>This functionality is currently only available in chrome!</h2>')
+            $('#calendar').append('<img src="assets/images/firefox.jpg">')
+
+        }else{
+            const date = new Date();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const day = date.getDate();
+            $('#calendar').fullCalendar({
+                defaultDate: year + '-' + month +'-'+day,
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    <%for (var i=0 ; i<taken.length ; i++ ) {%>
+                        {
+                        title: "<%=taken[i].title%>",
+                        start: new Date("<%=taken[i].start%>")
+                        },
+                    <%}%>
+                ]
+            });
+            $('#sendMail').on('submit',sendMail);
+        }
     });
 
 </script>

@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link href='assets/css/fullcalendar.min.css' rel='stylesheet' />
-    <link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link href='assets/css/fullcalendar.min.css' rel='stylesheet'/>
+    <link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print'/>
     <link rel="stylesheet" href="assets/css/screen.css">
     <link rel="stylesheet" href="assets/css/screen_details.css">
     <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/screen_calendar.css">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
     <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet">
@@ -24,25 +25,30 @@
 <script src='assets/js/moment.min.js'></script>
 <script src='assets/js/fullcalendar.min.js'></script>
 <script>
-    $(document).ready(function() {
-        var date = new Date();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-        var day = date.getDate();
-        $('#calendar').fullCalendar({
-            defaultDate: year + '-' + month +'-'+day,
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                <%for (var i=0 ; i<taken.length ; i++ ) {%>
-                {
-                    title: "<%=taken[i].title%>",
-                    start: new Date("<%=taken[i].start%>")
-                },
-                <%}%>
-            ]
-        });
+    $(document).ready(function () {
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            $('#calendar').html('<h2>This functionality is currently only available in chrome!</h2>')
+            $('#calendar').append('<img src="assets/images/firefox.jpg">')
 
+        } else {
+            var date = new Date();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDate();
+            $('#calendar').fullCalendar({
+                defaultDate: year + '-' + month + '-' + day,
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    <% for (var i = 0 ; i < taken.length ; i++ ) { %>
+                    {
+                        title: "<%= taken[i].title %>",
+                        start: new Date("<%= taken[i].start %>")
+                    },
+                    <% } %>
+                ]
+            });
+        }
     });
 </script>
 <header>
@@ -50,7 +56,8 @@
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>

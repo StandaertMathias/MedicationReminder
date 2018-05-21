@@ -212,14 +212,12 @@ app.post("/addMedication", function (req, res) {
                         });
                     });
                     //add times
-                    console.log(`userid: ${userid}, drugid: ${drugid}`);
                     for (let i = 0; i < times.length; i++) {
                         let time = times[i].split(':');
                         let date = new Date(new Date().toDateString() + ' ' + (Number(time[0])) + ':' + time[1]);
                         getConnection().query(Q.getUserDrugId, [userid, drugid], function (err, result) {
                             getConnection().query(Q.addNotification, [result[0].ud_id, date], function (err, result) {
                                 console.log(err);
-                                console.log(result)
                             });
                         });
                     }
@@ -325,7 +323,6 @@ app.get("/tookMedication", function (req, res) {
 app.get("/calendar", function (req, res) {
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.getTakenMedication, [result[0].user_id], function (err, result) {
-            console.log(result);
             res.render("calendar.ejs", {
                 taken: convertToTaken(result)
             })
@@ -369,7 +366,6 @@ function loadHomePage(req, res) {
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.getMostRecent, [result[0].user_id], function (err, result) {
             console.log("error zelf: " + err);
-            console.log(result);
             res.render("index.ejs", {
                 toTake: result
             });
@@ -393,7 +389,6 @@ function getConnection() {
         return connection;
     }
 }
-console.log(vapidKeys.privateKey);
 // webpush.setGCMAPIKey('<Your GCM API Key Here>');
 // webpush.setVapidDetails(
 //     'mailto:example@yourdomain.org',
