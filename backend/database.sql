@@ -29,7 +29,7 @@ CREATE TABLE `user` (
   `lastname` varchar(25) NOT NULL,
   `email` varchar(50) NOT NULL UNIQUE,
   `birthday` datetime NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(100) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS `ud_taken`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ud_taken` (
-  `ud_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ud_id` int(11) NOT NULL,
   `taken` datetime NOT NULL,
   CONSTRAINT `fkTaken` FOREIGN KEY (`ud_id`) REFERENCES `ud_notification` (`ud_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;

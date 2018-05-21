@@ -1,0 +1,97 @@
+form{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+}
+input {
+    display: block;
+}
+
+input:not([type=submit]), select {
+    height: 25px;
+}
+
+input:not([type=submit]) {
+    padding-left: 5px;
+    width: 75%;
+    max-width: 300px;
+}
+
+label {
+    margin-top: 25px;
+}
+
+legend {
+    color: #23395B;
+}
+
+.navigateButton {
+    border: none;
+    background-color: #23395B;
+    color: white;
+    margin-top: 25px;
+    margin-left: 2%;
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.navigateButton:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #23395B;
+    color: white;
+    text-decoration: none;
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+}
+
+#progressbar li {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: white;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+}
+
+#progressbar li:first-child:after {
+    content: none;
+}
+
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #23395B;
+    color: white;
+}
+p{
+    text-align: left;
+}

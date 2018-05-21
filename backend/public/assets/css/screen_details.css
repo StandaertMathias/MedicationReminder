@@ -1,9 +1,8 @@
 main{
-    min-width: 700px;
     display: flex;
     justify-content: space-between;
 }
-#calendarView.container{
+#calendar{
     max-width: 250px;
 }
 .firstAction{
@@ -13,4 +12,19 @@ main{
     main {
         display: inline-block;
     }
+}
+
+h2,h3{
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+}
+
+#calendar {
+    max-width: 300px;
+    margin: 20px auto 0;
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/screen_accountDetails.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="manifest" href="../public/manifest.json">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet">
+    <title>Medication Reminder</title>
+</head>
+<body>
+<header>
+    <h1>Re:Medic</h1>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="accountDetails">Account</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <h1>Account Details</h1>
+    <form method="post" action="saveAccountDetails">
+        <label>First name:</label><input type="text" name="firstname" value="<%= firstname %>">
+        <label>Last name:</label><input type="text" name="lastname" value="<%= lastname %>">
+        <label>Email-address:</label><input type="text" name="email" value="<%= email %>">
+        <label>Birthday:</label><input type="date" name="birthday" value="<%=birthday%>">
+        <input type="submit" value="Save profile" class="navigateButton">
+    </form>
+</main>
+<footer></footer>
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

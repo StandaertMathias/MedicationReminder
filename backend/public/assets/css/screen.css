@@ -1,48 +1,74 @@
 body{
     min-height: 100vh;
+    color: #23395B;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #FAF7F1;
 }
 header h1{
     text-align: center;
+    margin-top: 0px;
+}
+header{
+    padding-top: 2%;
 }
 main{
-    max-width: 500px;
+    max-width: 900px;
+    min-height: 82vh;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0% 10% 5%;
+}
+p{
+    text-align: center;
+}
+.navbar-inverse{
+    margin-bottom: 0px;
+    background-color: #23395B;
+}
+.navbar-inverse .navbar-toggle{
+    border: none;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+.navbar-nav>li>a:hover{
+    background-color:#23395B;
+    text-decoration: underline;
 }
 .calendar{
-    border: 2px dashed black;
+    border-radius: 20px;
+    border: 2px dashed #23395B;
     padding: 20px;
 }
 
 .firstAction{
-    font-size: 2rem;
+    color: #23395B;
+    font-size: 1.6rem;
     display: block;
-    background-color: gray;
-    color: white;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 50px;
-    width: 200px;
+    background-color: transparent;
+    border: 3px solid #23395B;
+    border-radius: 20px;
+    min-width: 100px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     text-align: center;
-    padding: 20px;
-
 }
 .firstAction:hover{
-    transform: scale(1.1);
-}
-.firstAction:visited,.firstAction:hover{
+    background-color: #23395B;
     color: white;
     text-decoration: none;
 }
+
 li, li>label{
     font-size: 1.8rem;
 }
 .calendar li, .calendar li>span{
     list-style-type: none;
 }
-input{
-    padding-left: 5px;
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #23395B;
 }

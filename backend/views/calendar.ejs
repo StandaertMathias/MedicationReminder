@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/screen_details.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link href='assets/css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src='assets/js/moment.min.js'></script>
+    <script src='assets/js/fullcalendar.min.js'></script>
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet">
+    <title>Medication Reminder</title>
+</head>
+
+<!--Dit is inline om aan de medicatie te raken die nodejs stuurt-->
+<script>
+    function sendMail(evt) {
+        evt.preventDefault();
+        var email = $('#sendMail input[type=email]').val();
+        var code = (`mailto:${email}?subject=Overview Medication&body=Dear Mr. Ms.,%0D%0A%0D%0A This is the overview of all the medication that I toke. %0D%0A%0D%0A Sincerely.%0D%0Amedication     date%0D%0A`);
+        <%for (var i=0 ; i<taken.length ; i++ ) {%>
+            code += `${"<%=taken[i].title%>"}......${"<%=taken[i].start%>"}%0D%0A`
+        <%}%>
+        window.open(code);
+    };
+    $(document).ready(function() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var day = date.getDate();
+        $('#calendar').fullCalendar({
+            defaultDate: year + '-' + month +'-'+day,
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                <%for (var i=0 ; i<taken.length ; i++ ) {%>
+                    {
+                    title: "<%=taken[i].title%>",
+                    start: new Date("<%=taken[i].start%>")
+                    },
+                <%}%>
+            ]
+        });
+        $('#sendMail').on('submit',sendMail)
+    });
+
+</script>
+<style>
+
+    body {
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 20px auto 0;
+    }
+</style>
+<body>
+<header>
+
+    <h1>Re:Medic</h1>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="accountDetails">Account</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<form action="" id="sendMail">
+    <label for="">Send via mail to </label>
+    <input type="email">
+    <input type="submit" value="mail" class="navigateButton">
+</form>
+<div id='calendar'></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href='assets/css/fullcalendar.min.css' rel='stylesheet' />
+    <link href='assets/css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/screen_details.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet">
+    <title>Medication Reminder</title>
+</head>
+<body>
+<!--Dit is inline om aan de informatie te komen die nodejs doorgeeft-->
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src='assets/js/moment.min.js'></script>
+<script src='assets/js/fullcalendar.min.js'></script>
+<script>
+    $(document).ready(function() {
+        var date = new Date();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+        var day = date.getDate();
+        $('#calendar').fullCalendar({
+            defaultDate: year + '-' + month +'-'+day,
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                <%for (var i=0 ; i<taken.length ; i++ ) {%>
+                {
+                    title: "<%=taken[i].title%>",
+                    start: new Date("<%=taken[i].start%>")
+                },
+                <%}%>
+            ]
+        });
+
+    });
+</script>
+<header>
+    <h1>Re:Medic</h1>
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index">Home</a></li>
+                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="accountDetails">Account</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div><h2><%= name %></h2>
+        <h3><%= dose %></h3>
+        <a href="" class="firstAction">Reminder</a>
+        <a href="delete?drug=<%= id %>" class="navigateButton">delete</a>
+    </div>
+    <div id='calendar'></div>
+</main>
+
+</body>
+</html>

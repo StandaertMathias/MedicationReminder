@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/screen.css">
-    <link rel="stylesheet" href="assets/css/screen_newMedication.css">
+    <meta name="theme-color">
 
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/screen.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+    <link rel="stylesheet" href="assets/css/screen_newMedication.css">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" type="image/png" href="assets/images/logo.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Noto+Sans" rel="stylesheet">
     <title>Medication Reminder</title>
 </head>
 <body>
 <header>
-    <h1>Medication Reminder</h1>
+    <h1>Re:Medic</h1>
     <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -30,8 +32,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="index">Home</a></li>
-                    <li><a href="calendar.html">Calendar</a></li>
-                    <li><a href="account.html">Account</a></li>
+                    <li><a href="calendar">Calendar</a></li>
+                    <li><a href="accountDetails">Account</a></li>
                     <li><a href="notifications.html">Notifications</a></li>
                 </ul>
             </div>
@@ -39,21 +41,23 @@
     </nav>
 </header>
 <main>
+    <ul id="progressbar">
+        <li class="active">medication name</li>
+        <li>dose</li>
+        <li>reminders</li>
+    </ul>
     <h2>Add new medication</h2>
+    <p>Fill in this form to add new medication and reminders.</p>
     <form action="addMedication" method="post">
+
         <fieldset id="firstscreen">
-            <legend>Stap 1</legend>
             <label for="name">Name:     </label>
-            <select name="name" id="name">
-                <%for (var i=0 ; i<drugs.length ; i++ ) {%>
-                        <option id="<%= drugs[i].drug_id %>"><%= drugs[i].name %></option>
-                <%}%>
-            </select>
-            <hr>
-            <a href="#" class="step2">next step</a>
+            <input type="text" list="name" name="name"/>
+            <datalist id="name" >
+            </datalist>
+            <a href="#" class="step2 navigateButton">next</a>
         </fieldset>
         <fieldset  class="inactive" id="secondscreen">
-            <legend>Stap 2</legend>
             <label for="dose">doses:    </label><input type="number" min="0" id="dose" name="dose">
             <select name="unit">
                 <option value="capsule">Capsule</option>
@@ -61,14 +65,12 @@
                 <option value="milligram" selected>Milligram</option>
                 <option value="milliliter">Milliliter</option>
                 <option value="pill">Pill</option>
-                <option value="capsule">Capsule</option>
             </select>
             <hr>
-            <a href="#" id="previous" class="step1">previous step</a>
-            <a href="#" class="step3">next step</a>
+            <a href="#" id="previous" class="step1 navigateButton">previous</a>
+            <a href="#" class="step3 navigateButton">next</a>
         </fieldset>
         <fieldset class="inactive" id="thirdscreen">
-            <legend>Step 3</legend>
             <h3>Days</h3>
             <input type="checkbox" id="Mo"><label for="Mo">Mo</label>
             <input type="checkbox" id="Tu"><label for="Tu">Tu</label>
@@ -78,22 +80,22 @@
             <input type="checkbox" id="Sa"><label for="Sa">Sa</label>
             <input type="checkbox" id="Su"><label for="Su">Su</label>
             <h3>Times</h3>
-            <label>Minimal time between:    </label><input type="number" min="0" max="24" value="4">
+            <label>Minimal time between:    </label><input type="number" min="0" max="24" value="4" name="minTime" id="minTime">
             <label for="">hours</label>
             <div id="times">
                 <h3>Notifications</h3>
-                <input type="time">
+                <input type="time" name="time1">
             </div>
-            <a href="#" id="addTime">new time</a>
+            <a href="#" id="addTime" class="firstAction">new time</a>
             <hr>
-            <a href="#" class="step2">previous step</a>
-            <input type="submit" value="add">
+            <a href="#" class="step2 navigateButton">previous</a>
+            <input type="submit" value="add" class="navigateButton">
         </fieldset>
     </form>
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/newmedication.js"></script>
 </body>
 </html>
