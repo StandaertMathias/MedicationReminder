@@ -1,5 +1,4 @@
 let deferredPrompt;
-let applicationServerPublicKey = 'BG30qic6y-SSI1PojOr6Pgm-K7i7_ZtUDFv8Ppk2A4vHdvsadmDWU-nyVoAJrler5aLZ3iKEXEwxIEHv38EUbI4';
 let isSubscribed = false;
 let swRegistration = null;
 // const socket = io();
@@ -54,7 +53,6 @@ function showDownloadPrompt() {
 $(document).ready(function () {
     setDate();
     $("body").on("click", "#download", showDownloadPrompt);
-    $('#Enablenotification').on('click', updateBtn);
     //serviceworker
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
@@ -69,82 +67,3 @@ $(document).ready(function () {
 
 
 });
-
-function initializeUI() {
-    $('#Enablenotification').on('click', function() {
-        $('#Enablenotification').prop('disabled', true);
-        if (isSubscribed) {
-            // TODO: Unsubscribe user
-        } else {
-            subscribeUser();
-        }
-    });
-    // Set the initial subscription value
-    swRegistration.pushManager.getSubscription()
-        .then(function (subscription) {
-            isSubscribed = !(subscription === null);
-
-            if (isSubscribed) {
-                console.log('User IS subscribed.');
-            } else {
-                console.log('User is NOT subscribed.');
-            }
-
-            updateBtn();
-        });
-}
-function subscribeUser() {
-    const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
-    swRegistration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: applicationServerKey
-    })
-        .then(function(subscription) {
-            console.log('User is subscribed.');
-
-            updateSubscriptionOnServer(subscription);
-
-            isSubscribed = true;
-
-            updateBtn();
-        })
-        .catch(function(err) {
-            console.log('Failed to subscribe the user: ', err);
-            updateBtn();
-        });
-}
-function updateBtn() {
-    if (Notification.permission === 'denied') {
-        $('#Enablenotification').html('Push Messaging Blocked.');
-        $('#Enablenotification').prop('disabled', false);
-        updateSubscriptionOnServer(null);
-        return;
-    }
-    if (isSubscribed) {
-        $('#Enablenotification').html('Disable Push Messaging');
-    } else {
-        $('#Enablenotification').html('Enable Push Messaging');
-    }
-    $('#Enablenotification').prop('disabled', false);
-}
-function urlB64ToUint8Array(base64String) {
-    const padding = '='.repeat((4 - base64String.length % 4) % 4);
-    const base64 = (base64String + padding)
-        .replace(/\-/g, '+')
-        .replace(/_/g, '/');
-
-    const rawData = window.atob(base64);
-    const outputArray = new Uint8Array(rawData.length);
-
-    for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
-    }
-    return outputArray;
-}
-function updateSubscriptionOnServer(subscription) {
-    // TODO: Send subscription to application server
-
-    if (subscription) {
-        console.log(JSON.stringify(subscription));
-    }
-}

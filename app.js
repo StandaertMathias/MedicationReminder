@@ -13,11 +13,13 @@ const bcrypt = require('bcryptjs');
 const HTTPS = require('https');
 const fs = require('fs');
 
-const webpush = require('web-push');
-const vapidKeys = webpush.generateVAPIDKeys();
 
-var io = require("socket.io");
-var socket = io();
+
+const webpush = require('web-push');
+const publicVapidKey = "BAxViQwRG0zseLxBQy4kZWoUlfVqfAOFvsz_l2kS6tmAcqso4mI_NJkySv2hoX3RwlfeEc0kOrkDlQ_rv1zjbhw";
+const privateVapidKey = "xEZ32rusqWRseb0UDDls25ApxIYVCBjgr-OSvu2vx18";
+webpush.setVapidDetails('mailto:mathias.standaert@student.howest.be',publicVapidKey, privateVapidKey);
+
 
 
 const db_config = {
@@ -105,8 +107,16 @@ function createConnection() {
 createConnection();
 
 //domainname
-HTTPS.createServer(options, app).listen(8443);
+var https = HTTPS.createServer(options, app);
+https.listen(8443);
 
+const io = require('socket.io')(https);
+io.on('connection', function(socket){
+    console.log('a user connected');
+});
+io.sockets.on('pushSubscription',function(message){
+	console.log(message);
+});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -125,8 +135,35 @@ app.get("/", function (req, res) {
 app.get("/index", function (req, res) {
     loadHomePage(req, res);
 });
-app.get("/publicKey", function (req,res) {
-    socket.emit("key",vapidKeys.publicKey)
+app.post('/subscribe', function (req,res){
+	const subscription = req.body.subscription;
+	const duration = req.body.duration;
+	console.log(duration);
+  	res.status(201).json({});
+  	const payload = JSON.stringify({ title: 'test' });
+
+  	console.log(subscription);
+	//getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
+        //	getConnection().query(Q.getMostRecent, [result[0].user_id], function (err, result) {
+	//		console.log(result);
+ 			setTimeout(function(){
+            	    	webpush.sendNotification(subscription, payload).catch(error => {
+                        	console.error(error.stack);
+                	});
+
+        		},duration);        
+	//	});
+   	//});
+});
+app.get("/getPublicKey", function (req,res) {
+	console.log("test2");
+	console.log(vapidKeys.publicKey);
+    	io.sockets.emit("publicKey",vapidKeys.publicKey);
+});
+app.get("/NotificationId",function(req,res){
+	const id = JSON.parse(req.query.id);
+	webpush.sendNotification(id,'');	
+	loadHomePage(req,res);
 });
 app.get("/newmedication", function (req, res) {
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
@@ -317,7 +354,6 @@ app.get("/tookMedication", function (req, res) {
     const drugId = req.query.drug;
     getConnection().query(Q.tookMedication, [drugId, new Date()], function (err, result) {
     })
-
 });
 
 app.get("/calendar", function (req, res) {
@@ -389,6 +425,16 @@ function getConnection() {
         return connection;
     }
 }
+function calculateDelay(){
+//	getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
+//        getConnection().query(Q.getMostRecent, [result[0].user_id], function (err, result) {
+//            	console.log("=================================================");
+//		console.log(result);
+//        });
+//    	});
+	return 5000;
+}
+
 // webpush.setGCMAPIKey('<Your GCM API Key Here>');
 // webpush.setVapidDetails(
 //     'mailto:example@yourdomain.org',
