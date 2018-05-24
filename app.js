@@ -10,7 +10,7 @@ const index = require('./routes/index');
 const mysql = require('mysql');
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
-const HTTPS = require('https');
+const HTTP = require('http');
 const fs = require('fs');
 
 
@@ -107,10 +107,10 @@ function createConnection() {
 createConnection();
 
 //domainname
-var https = HTTPS.createServer(options, app);
-https.listen(process.env.PORT || 8443);
+var http = HTTP.createServer(app);
+http.listen(process.env.PORT || 8080);
 
-const io = require('socket.io')(https);
+const io = require('socket.io')(http);
 io.on('connection', function(socket){
     console.log('a user connected');
 });
