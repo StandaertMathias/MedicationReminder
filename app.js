@@ -23,11 +23,11 @@ webpush.setVapidDetails('mailto:mathias.standaert@student.howest.be',publicVapid
 
 
 const db_config = {
-    host: "localhost",
+    host: "us-cdbr-iron-east-04.cleardb.net",
     port: 3306,
-    database: "medication_reminder",   //locaal testen: remedi1q_ weglaten
-    user: "mathias",                   //locaal testen: remedi1q_ weglaten
-    password: "MobileWebApp"
+    database: "heroku_0b86154fea4feae",   //locaal testen: remedi1q_ weglaten
+    user: "bae1b5456c71ec",                   //locaal testen: remedi1q_ weglaten
+    password: "91bed0cd"
 };
 
 const sessionConfig = {
