@@ -108,7 +108,7 @@ createConnection();
 
 //domainname
 var https = HTTPS.createServer(options, app);
-https.listen(8443);
+https.listen(process.env.PORT || 8443);
 
 const io = require('socket.io')(https);
 io.on('connection', function(socket){
