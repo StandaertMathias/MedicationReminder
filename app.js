@@ -169,7 +169,7 @@ app.get("/NotificationId",function(req,res){
 app.get("/newmedication", function (req, res) {
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.allDrugs, function (err, result) {
-            res.render("newmedication.ejs", {
+            res.render("newMedication.ejs", {
                 drugs: result
             });
         });
