@@ -17,20 +17,15 @@ function urlBase64ToUint8Array(base64String) {
  
 
 if ('serviceWorker' in navigator) {
-  console.log('Registering service worker');
   setTimeout(function(){
-	console.log("ask notification");
 	run().catch(error => console.error(error));
   },2000);
 }
 
 async function run() {
-  console.log('Registering service worker');
   const registration = await navigator.serviceWorker.
     register('sw-min.js', {scope: '/'});
-  console.log('Registered service worker');
 
-  console.log('Registering push');
   const subscription = await registration.pushManager.
     subscribe({
       userVisibleOnly: true,
@@ -38,9 +33,6 @@ async function run() {
       // https://www.npmjs.com/package/web-push#using-vapid-key-for-applicationserverkey
       applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
     });
-  console.log('Registered push');
-
-  console.log('Sending push');
 
   const time =  $('.calendar li:first input').data('time').split(":").map(x=>Number(x));
   let alarm = new Date();
@@ -53,7 +45,7 @@ async function run() {
   const data = {
     subscription:subscription,
     duration:duration
-  }
+  };
 
   await fetch('/subscribe', {
     method: 'POST',
@@ -62,5 +54,4 @@ async function run() {
       'content-type': 'application/json'
     }
   });
-  console.log('Sent push');
 }

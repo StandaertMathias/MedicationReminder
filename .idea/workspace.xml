@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9b8c88-01da-49a0-ae78-8b99dee6e0df" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/notifications.js" afterPath="$PROJECT_DIR$/public/assets/js/notifications.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="417">
-              <caret line="314" column="33" lean-forward="true" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
+              <caret line="314" column="33" lean-forward="false" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sw-min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/sw-min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/notifications.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/notifications.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -57,15 +87,15 @@
       <find>sock</find>
       <find>console.</find>
       <find>consol</find>
-      <find>console</find>
       <find>applic</find>
-      <find>conso</find>
       <find>socket</find>
       <find>tookMe</find>
       <find>tookM</find>
       <find>loadHome</find>
       <find>cons</find>
       <find>delete</find>
+      <find>conso</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,7 +129,6 @@
         <option value="$PROJECT_DIR$/public/assets/css/screen_calendar.css" />
         <option value="$PROJECT_DIR$/public/assets/js/script.js" />
         <option value="$PROJECT_DIR$/public/notifications.html" />
-        <option value="$PROJECT_DIR$/public/assets/js/notifications.js" />
         <option value="$PROJECT_DIR$/views/account.ejs" />
         <option value="$PROJECT_DIR$/views/accountDetails.ejs" />
         <option value="$PROJECT_DIR$/views/calendar.ejs" />
@@ -110,6 +139,7 @@
         <option value="$PROJECT_DIR$/views/accountDetailsEdit.ejs" />
         <option value="$PROJECT_DIR$/public/sw-min.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/notifications.js" />
       </list>
     </option>
   </component>
@@ -126,9 +156,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
@@ -189,6 +216,13 @@
               <item name="MedicationReminder" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="MedicationReminder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MedicationReminder" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="MedicationReminder" type="b2602c69:ProjectViewProjectNode" />
@@ -320,12 +354,12 @@
       <workItem from="1527154271606" duration="25000" />
       <workItem from="1527235784961" duration="914000" />
       <workItem from="1527250030277" duration="1667000" />
-      <workItem from="1527251731210" duration="1723000" />
+      <workItem from="1527251731210" duration="2187000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202467000" />
+    <option name="totallyTimeSpent" value="202931000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,13 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/newmedication.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -611,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1218">
           <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/notifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -691,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/sw-min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/accountDetailsEdit.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -709,7 +722,31 @@
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
-          <caret line="314" column="33" lean-forward="true" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
+          <caret line="314" column="33" lean-forward="false" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/sw-min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="32" />
           <folding />
         </state>
       </provider>
