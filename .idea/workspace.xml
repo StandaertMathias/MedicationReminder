@@ -11,7 +11,6 @@
       <change beforePath="$PROJECT_DIR$/views/details.ejs" afterPath="$PROJECT_DIR$/views/details.ejs" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
       <change beforePath="$PROJECT_DIR$/views/management.ejs" afterPath="$PROJECT_DIR$/views/management.ejs" />
-      <change beforePath="$PROJECT_DIR$/views/newmedication.ejs" afterPath="$PROJECT_DIR$/views/newmedication.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -216,11 +215,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="2418" />
@@ -407,12 +403,12 @@
       <workItem from="1527069068723" duration="30000" />
       <workItem from="1527095100715" duration="79000" />
       <workItem from="1527154271606" duration="25000" />
-      <workItem from="1527235784961" duration="314000" />
+      <workItem from="1527235784961" duration="913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198477000" />
+    <option name="totallyTimeSpent" value="199076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,7 +420,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32655367" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29032257" sideWeight="0.51964134" order="7" side_tool="true" content_ui="tabs" />
