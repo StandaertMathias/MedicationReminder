@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9b8c88-01da-49a0-ae78-8b99dee6e0df" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/views/details.ejs" afterPath="$PROJECT_DIR$/views/details.ejs" />
+      <change beforePath="$PROJECT_DIR$/views/account.ejs" afterPath="$PROJECT_DIR$/views/account.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,11 +63,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="details.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/details.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="619">
               <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/account.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -148,7 +158,6 @@
         <option value="$PROJECT_DIR$/public/assets/css/screen_calendar.css" />
         <option value="$PROJECT_DIR$/public/assets/js/script.js" />
         <option value="$PROJECT_DIR$/public/notifications.html" />
-        <option value="$PROJECT_DIR$/views/account.ejs" />
         <option value="$PROJECT_DIR$/views/accountDetails.ejs" />
         <option value="$PROJECT_DIR$/views/calendar.ejs" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
@@ -160,6 +169,7 @@
         <option value="$PROJECT_DIR$/public/assets/js/notifications.js" />
         <option value="$PROJECT_DIR$/public/assets/js/takeMedication.js" />
         <option value="$PROJECT_DIR$/views/details.ejs" />
+        <option value="$PROJECT_DIR$/views/account.ejs" />
       </list>
     </option>
   </component>
@@ -374,12 +384,12 @@
       <workItem from="1527154271606" duration="25000" />
       <workItem from="1527235784961" duration="914000" />
       <workItem from="1527250030277" duration="1667000" />
-      <workItem from="1527251731210" duration="2817000" />
+      <workItem from="1527251731210" duration="3178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203561000" />
+    <option name="totallyTimeSpent" value="203922000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/account.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="65" lean-forward="false" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/accountDetails.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -769,6 +772,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
           <caret line="80" column="28" lean-forward="false" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/account.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="66" column="25" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
           <folding />
         </state>
       </provider>
