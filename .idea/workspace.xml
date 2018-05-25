@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea9b8c88-01da-49a0-ae78-8b99dee6e0df" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="296" column="40" lean-forward="false" selection-start-line="296" selection-start-column="40" selection-end-line="296" selection-end-column="40" />
+            <state relative-caret-position="417">
+              <caret line="314" column="33" lean-forward="true" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -321,12 +320,12 @@
       <workItem from="1527154271606" duration="25000" />
       <workItem from="1527235784961" duration="914000" />
       <workItem from="1527250030277" duration="1667000" />
-      <workItem from="1527251731210" duration="805000" />
+      <workItem from="1527251731210" duration="1723000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201549000" />
+    <option name="totallyTimeSpent" value="202467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -650,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/accountDetailsEdit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2020">
@@ -706,10 +698,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/accountDetailsEdit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="296" column="40" lean-forward="false" selection-start-line="296" selection-start-column="40" selection-end-line="296" selection-end-column="40" />
+        <state relative-caret-position="417">
+          <caret line="314" column="33" lean-forward="true" selection-start-line="314" selection-start-column="33" selection-end-line="314" selection-end-column="33" />
           <folding />
         </state>
       </provider>

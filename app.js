@@ -64,7 +64,7 @@ const Q = {
     "join user_drug ud on d.drug_id = ud.drug_id\n" +
     "where ud_id=?",
     deleteNotification: "delete from ud_notification where ud_id=?",
-    deleteTaken: "delete from ud_notification where ud_id=?",
+    deleteTaken: "delete from ud_taken where ud_id=?",
     deleteUD: "delete from user_drug where ud_id=?",
     updateUser: "update user set firstname= ? ,lastname=?,email=?,birthday=? where user_id=?",
     removeUser: "delete from user where user_id=?",
