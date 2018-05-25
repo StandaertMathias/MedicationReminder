@@ -40,15 +40,16 @@ function filterMedicationList() {
             takenToday.setItem('day', today);
         }else{
             takenToday.getItem('taken').then(function (value) {
-                $('.calendar li').each(function (idx, li) {
-                    const medication = $(li).children("input").data("medication");
-                    const time = $(li).children("input").data("time");
-                    const contains = value.filter(x => x.medication === medication && x.time === time);
-                    if(contains.length>0){
-                        removeReminder($(li).children("input"))
-                    }
-                })
-
+                if(value != null) {
+                    $('.calendar li').each(function (idx, li) {
+                        const medication = $(li).children("input").data("medication");
+                        const time = $(li).children("input").data("time");
+                        const contains = value.filter(x => x.medication === medication && x.time === time);
+                        if (contains.length > 0) {
+                            removeReminder($(li).children("input"))
+                        }
+                    })
+                }
             });
         }
     });
