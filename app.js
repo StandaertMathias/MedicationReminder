@@ -295,12 +295,16 @@ app.get("/accountDetails", function (req, res) {
     })
 });
 app.get("/delete", function (req, res) {
+    console.log("delete medication");
     const ud_id = req.query.drug;
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         const user_id = result[0].user_id;
         getConnection().query(Q.deleteNotification, [ud_id], function (err, result) {
+            console.log(err);
             getConnection().query(Q.deleteTaken, [ud_id], function (err, result) {
+                console.log(err);
                 getConnection().query(Q.deleteUD, [ud_id], function (err, result) {
+                    console.log(err);
                     getConnection().query(Q.getDrugByUser, [user_id], function (err, result) {
                         res.render("management.ejs", {
                             drugs: result
