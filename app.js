@@ -336,7 +336,7 @@ app.post("/saveAccountDetails", function (req, res) {
     const birthday = req.body.birthday;
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.updateUser, [firstname, lastname, email, birthday, result[0].user_id], function (err, result) {
-            res.redirect('/edit');
+            res.redirect('/accountDetails');
         })
     })
 });
