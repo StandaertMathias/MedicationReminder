@@ -336,7 +336,12 @@ app.post("/saveAccountDetails", function (req, res) {
     const birthday = req.body.birthday;
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.updateUser, [firstname, lastname, email, birthday, result[0].user_id], function (err, result) {
-            loadHomePage(req, res);
+            res.render("accountDetails.ejs", {
+                firstname: firstname,
+                lastname: lastname,
+                email: email,
+                birthday: `${birthday.getFullYear()}-${(birthday.getMonth() < 10) ? '0' + (birthday.getMonth() + 1) : (birthday.getMonth() + 1)}-${(birthday.getDate() < 10) ? '0' + birthday.getDate() : birthday.getDate()}`
+            })
         })
     })
 });
@@ -435,22 +440,3 @@ function calculateDelay(){
 //    	});
 	return 5000;
 }
-
-// webpush.setGCMAPIKey('<Your GCM API Key Here>');
-// webpush.setVapidDetails(
-//     'mailto:example@yourdomain.org',
-//     vapidKeys.publicKey,
-//     vapidKeys.privateKey
-// );
-//
-//
-// const pushSubscription = {
-//     "endpoint": "https://fcm.googleapis.com/fcm/send/cybxXsNdna0:APA91bH0aq6P-LLHNVsH4JUe71ypHIapSyn7Br_lLvaC55p4eu-MZxyOotXzVJiejD13iaJHQ8kzMOo0Ej7YgE8xsnM6mBA5xMlsW8dn4DKaLXxaOqRqHaY2j_glzog17ogq8rxfWfC0",
-//     "expirationTime": null,
-//     "keys": {
-//         "p256dh": "BGUbv4ukUuyymT93DvA_07CIw26fhNxmwYS8oZbgK9R8bAltNIYPMZXzQFIMs2DiZdoXcyMgNlUoBbc__-NPhOk",
-//         "auth": "sxW9XG7m5xFUc8DJuTXa1A"
-//     }
-// };
-//
-// webpush.sendNotification(pushSubscription,'');
