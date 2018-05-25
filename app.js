@@ -336,12 +336,7 @@ app.post("/saveAccountDetails", function (req, res) {
     const birthday = req.body.birthday;
     getConnection().query(Q.getUserId, [req.session.user], function (err, result) {
         getConnection().query(Q.updateUser, [firstname, lastname, email, birthday, result[0].user_id], function (err, result) {
-            res.render("accountDetails.ejs", {
-                firstname: firstname,
-                lastname: lastname,
-                email: email,
-                birthday: `${birthday.getFullYear()}-${(birthday.getMonth() < 10) ? '0' + (birthday.getMonth() + 1) : (birthday.getMonth() + 1)}-${(birthday.getDate() < 10) ? '0' + birthday.getDate() : birthday.getDate()}`
-            })
+            res.redirect('/edit');
         })
     })
 });
